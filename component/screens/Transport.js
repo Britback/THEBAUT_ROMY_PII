@@ -87,27 +87,6 @@ export default function Transport({ route, navigation, data }) {
             <Text style={styles.text2}>
               {vac.collabName} &amp; {vac.date}
             </Text>
-            <FlatList data={vacs} renderItem={renderCollab} />
-
-            <TextInput
-              value={collab}
-              placeholder="Nom du nouveau compagnon de voyage"
-              onChangeText={(text) => setCollab(text)}
-            />
-            <TouchableOpacity onPress={ajoutercollab}>
-              <Text>Ajouter</Text>
-            </TouchableOpacity>
-            <Text>BILLETS</Text>
-            {vacs.map((data) => {
-              return (
-                <Image
-                  source={vac.ticketsPdf}
-                  key={data.id}
-                  style={{ width: 100, height: 300 }}
-                />
-              );
-            })}
-
             <View style={styles.vue5}>
               <TouchableOpacity
                 onPress={() => navigation.navigate("Logement", { vacID })}
@@ -126,6 +105,34 @@ export default function Transport({ route, navigation, data }) {
                 </View>
               </TouchableOpacity>
             </View>
+            <FlatList data={vacs} renderItem={renderCollab} />
+
+            <TextInput
+              value={collab}
+              placeholder="Nom du nouveau compagnon de voyage"
+              onChangeText={(text) => setCollab(text)}
+            />
+            <TouchableOpacity onPress={ajoutercollab}>
+              <Text>Ajouter</Text>
+            </TouchableOpacity>
+
+            <Text>BILLETS</Text>
+            {vacs.map((data) => {
+              return (
+                <View>
+                  <Image
+                    source={vac.ticketsPdf}
+                    key={data.id}
+                    style={{ width: 100, height: 300 }}
+                  />
+                  <Image
+                    source={vac.ticketsPdf1}
+                    key={data.id}
+                    style={{ width: 150, height: 300 }}
+                  />
+                </View>
+              );
+            })}
           </View>
         </ScrollView>
       </View>

@@ -14,6 +14,7 @@ export const Items = [
     isDone: false,
     vacImage: require("./images/logo.png"),
     ticketsPdf: require("./images/ticket1.jpg"),
+    ticketsPdf1: require("./images/ticket2.jpg"),
   },
   {
     id: 2,
@@ -22,10 +23,8 @@ export const Items = [
     collabName: "John, Fred",
     isDone: true,
     vacImage: require("./images/logo.png"),
-    ticketsPdf: [
-      require("./images/ticket1.jpg"),
-      require("./images/ticket2.jpg"),
-    ],
+    ticketsPdf: require("./images/ticket1.jpg"),
+    ticketsPdf1: require("./images/ticket2.jpg"),
   },
   {
     id: 3,
@@ -34,9 +33,7 @@ export const Items = [
     collabName: "Momo, Fred",
     isDone: false,
     vacImage: require("./images/logo.png"),
-    ticketsPdf: [
-      require("./images/ticket1.jpg"),
-      require("./images/ticket2.jpg"),
-    ],
+    ticketsPdf: require("./images/ticket1.jpg"),
+    ticketsPdf1: require("./images/ticket2.jpg"),
   },
 ];
