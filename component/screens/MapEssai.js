@@ -35,8 +35,8 @@ export default function MapEssai() {
         }}
         query={{
           key: "AIzaSyBOt4_zjmVwi16w_6PlJBknIH6dFfzn6PY ",
-          language: "en",
-          components: "country:us",
+          language: "fr",
+          components: "country:fr",
           types: "establishment",
           radius: 30000,
           location: `${region.latitude}, ${region.longitude}`,

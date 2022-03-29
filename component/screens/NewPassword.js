@@ -8,16 +8,6 @@ import { useNavigation } from "@react-navigation/native";
 export default function NewPassword({navigation}) {
   const [code, setCode] = useState("");
   const [newPassword, setnewPassword] = useState("");
-
-  const nav = useNavigation();
-
-  const onSendPressed = () => {
-    nav.navigate("Home");
-  };
-  const onSignInPressed = () => {
-    nav.navigate("SignIn");
-  };
-
   return (
     <ScrollView>
       <View style={styles.root}>

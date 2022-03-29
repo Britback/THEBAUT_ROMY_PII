@@ -43,7 +43,7 @@ function App() {
         setUserToken("asdf");
       },
       signOut: () => {
-        setUserToken("null");
+        setUserToken(null);
       },
     };
   }, []);

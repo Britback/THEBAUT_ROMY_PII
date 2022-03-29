@@ -46,7 +46,7 @@ export default function Course({ route, navigation }) {
     );
   };
 
-  const ajouterCourses = () => {
+  const ajouterCourse = () => {
     const newCourses = courses.slice();
     newCourses.push({
       id: Math.floor(Math.random() * 100).toString(),
@@ -73,12 +73,10 @@ export default function Course({ route, navigation }) {
               </TouchableOpacity>
             </View>
           </View>
-           <View style={styles.vue3}>
-              <Text style={styles.text3}>Courses {vac.vacName}</Text>
-        
-            </View>
+          <View style={styles.vue3}>
+            <Text style={styles.text3}>Courses {vac.vacName}</Text>
+          </View>
           <View style={styles.vue4}>
-           
             <Text style={styles.text2}>{vac.collabName}</Text>
             <Text style={styles.text2}>{vac.date}</Text>
             <View style={styles.vue5}>
@@ -98,25 +96,23 @@ export default function Course({ route, navigation }) {
                   <Text style={styles.text1}>Logement</Text>
                 </View>
               </TouchableOpacity>
-
             </View>
           </View>
+          <View style={styles.container}>
+            <View style={{height:80}}>
+              <FlatList data={courses} renderItem={renderCourse} />
+            </View>
+            <TextInput
+              value={course}
+              style={{ height: "50%" }}
+              placeholder="Ex: Poisson"
+              onChangeText={(text) => setCourse(text)}
+            />
+            <TouchableOpacity style={styles.bouton} onPress={ajouterCourse}>
+              <Text style={styles.text}>Ajouter des courses</Text>
+            </TouchableOpacity>
+          </View>
         </ScrollView>
-        <View style={styles.container}>
-          <FlatList data={course} renderItem={renderCourse} />
-
-          <TextInput
-            value={course}
-            style={{height:"50%"}}
-            placeholder="Ex: Poisson"
-            onChangeText={(text) => {
-              setCourse(text);
-            }}
-          />
-          <TouchableOpacity style={styles.bouton} onPress={ajouterCourses}>
-            <Text style={styles.text}>Ajouter des courses</Text>
-          </TouchableOpacity>
-        </View>
       </View>
     </SafeAreaView>
   );
@@ -144,13 +140,12 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
   vue4: {
-    
     alignItems: "center",
     justifyContent: "space-between",
     marginVertical: 14,
     paddingBottom: 20,
   },
-  vue5: {  flexDirection: "row",width: "80%", alignItems: "center" },
+  vue5: { flexDirection: "row", width: "80%", alignItems: "center" },
   container: {
     position: "absolute",
     bottom: 10,
