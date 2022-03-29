@@ -10,20 +10,20 @@ import {
   Image,
 } from "react-native";
 import Entypo from "react-native-vector-icons/Entypo";
-import { Items } from "../Database";
-import Ski from "../images/ski.jpg";
+import { Items } from "../Bdd";
 import { AuthContext } from "../context";
 
 export default function Home({ navigation }) {
   const [vacs, setVacs] = useState([]);
   const { signOut } = useContext(AuthContext);
   useEffect(() => {
-    const unsubscribe = navigation.addListener("focus", () => {
+    const db = navigation.addListener("focus", () => {
       getDataFromDB();
     });
-    return unsubscribe;
+    return db;
   }, [navigation]);
 
+  // recupere les vacances présentes dans le tableau d'Items du ficher Bdd
   const getDataFromDB = () => {
     let vacList = [];
     for (let index = 0; index < Items.length; index++) {
@@ -147,7 +147,6 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     marginBottom: 8,
-    // backgroundColor: "red", // pour le mmt tant que pas image
   },
 
   text1: {

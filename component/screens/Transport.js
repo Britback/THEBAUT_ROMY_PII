@@ -10,11 +10,11 @@ import {
   TextInput,
   Image,
 } from "react-native";
-import { Items } from "../Database";
+import { Items } from "../Bdd";
 import Entypo from "react-native-vector-icons/Entypo";
 import Pdf from "../Pdf";
 import AjoutFichier from "../AjoutFichier";
-import styles from "../Style";
+import styles from "../StyleCorps";
 
 export default function Transport({ route, navigation, data }) {
   const [vacs, setVacs] = useState([]);
@@ -138,7 +138,6 @@ export default function Transport({ route, navigation, data }) {
               );
             })}
           </View>
-         <AjoutFichier/>
         </ScrollView>
       </View>
     </SafeAreaView>

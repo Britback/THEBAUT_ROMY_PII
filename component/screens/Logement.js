@@ -11,11 +11,11 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-import { Items } from "../Database";
+import { Items } from "../Bdd";
 import Entypo from "react-native-vector-icons/Entypo";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import MapEssai from "../MapEssai";
-import styles from "../Style";
+import styles from "../StyleCorps";
 
 export default function Logement({ route, navigation }) {
   const { vacID } = route.params; // permet de récuperer l'identifiant des vacances ou l'on a cliqué

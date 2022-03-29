@@ -26,7 +26,7 @@ class AjoutVac extends React.Component {
     const { navigate } = this.props.navigation;
     return (
       <View style={{ margin: 20 }}>
-        <TouchableOpacity onPress={() => navigate("Home")}>
+        <TouchableOpacity onPress={() => navigate("Accueil")}>
           <Entypo name="chevron-left" style={styles.chevron} />
         </TouchableOpacity>
         <TextInput

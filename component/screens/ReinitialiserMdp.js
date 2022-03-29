@@ -1,10 +1,10 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View, ScrollView } from "react-native";
+import {Text, View, ScrollView } from "react-native";
 import CustomInput from "../CustomInput";
 import CustomButton from "../CustomButton";
 import React, { useState } from "react";
+import styles from "../StyleCo";
 
-export default function ResetPassword({ navigation }) {
+export default function ReinitialiserMdp({ navigation }) {
   const [username, setusername] = useState("");
 
   return (
@@ -20,38 +20,15 @@ export default function ResetPassword({ navigation }) {
 
         <CustomButton
           text="Envoyer"
-          onPress={() => navigation.navigate("NewPassword")}
+          onPress={() => navigation.navigate("NouveauMdp")}
         />
 
         <CustomButton
           text="Retour à la connexion"
-          onPress={() => navigation.navigate("SignIn")}
+          onPress={() => navigation.navigate("Connexion")}
           type="TERTIARY"
         />
       </View>
     </ScrollView>
   );
 }
-
-const styles = StyleSheet.create({
-  root: {
-    alignItems: "center",
-    padding: 20,
-  },
-
-  title: {
-    fontSize: 24,
-    fontWeight: "bold",
-    color: "#051C60",
-    margin: 10,
-  },
-
-  text: {
-    color: "gray",
-    marginVertical: 10,
-  },
-
-  link: {
-    color: "#FDB075",
-  },
-});

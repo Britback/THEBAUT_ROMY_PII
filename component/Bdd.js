@@ -1,9 +1,4 @@
 import React from "react";
-import Skiimage from "./images/ski.jpg";
-import { Image } from "react-native";
-import ticket1 from "./images/ticket1.jpg";
-import ticket2 from "./images/ticket2.jpg";
-import Logo from "./images/logo.png";
 
 export const Items = [
   {

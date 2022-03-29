@@ -2,13 +2,13 @@ import * as React from "react";
 import { View, Text } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import ResetPassword from "./component/screens/ResetPassword";
+import ReinitialiserMdp from "./component/screens/ReinitialiserMdp";
 import { AuthContext } from "./component/context";
-import NewPassword from "./component/screens/NewPassword";
+import NouveauMdp from "./component/screens/NouveauMdp";
 import { useMemo, useState } from "react";
-import SignIn from "./component/screens/SignIn";
-import SignUp from "./component/screens/SignUp";
-import Home from "./component/screens/Home";
+import Connexion from "./component/screens/Connexion";
+import CreerCompte from "./component/screens/CreerCompte";
+import Accueil from "./component/screens/Accueil";
 import Transport from "./component/screens/Transport";
 import Logement from "./component/screens/Logement";
 import Course from "./component/screens/Course";
@@ -17,18 +17,18 @@ import MapEssai from "./component/MapEssai";
 
 const AuthStack = createNativeStackNavigator();
 const Stack = createNativeStackNavigator();
-const HomeStack = createNativeStackNavigator();
+const AccueilStack = createNativeStackNavigator();
 
-const HomeStackScreen = () => (
-  <HomeStack.Navigator screenOptions={{ headerShown: false }}>
-    <HomeStack.Screen name="Home" component={Home} />
-    <HomeStack.Screen name="AjoutVac" component={AjoutVac} />
-    <HomeStack.Screen name="Transport" component={Transport} />
-    <HomeStack.Screen name="Logement" component={Logement} />
-    <HomeStack.Screen name="Course" component={Course} />
-    <HomeStack.Screen name="SignIn" component={SignIn} />
-    <HomeStack.Screen name="MapEssai" component={MapEssai} />
-  </HomeStack.Navigator>
+const AccueilStackScreen = () => (
+  <AccueilStack.Navigator screenOptions={{ headerShown: false }}>
+    <AccueilStack.Screen name="Accueil" component={Accueil} />
+    <AccueilStack.Screen name="AjoutVac" component={AjoutVac} />
+    <AccueilStack.Screen name="Transport" component={Transport} />
+    <AccueilStack.Screen name="Logement" component={Logement} />
+    <AccueilStack.Screen name="Course" component={Course} />
+    <AccueilStack.Screen name="Connexion" component={Connexion} />
+    <AccueilStack.Screen name="MapEssai" component={MapEssai} />
+  </AccueilStack.Navigator>
 );
 
 function App() {
@@ -52,14 +52,14 @@ function App() {
       <NavigationContainer>
         {userToken ? (
           <Stack.Navigator>
-            <Stack.Screen name="Home" component={HomeStackScreen} />
+            <Stack.Screen name="Accueil" component={AccueilStackScreen} />
           </Stack.Navigator>
         ) : (
           <AuthStack.Navigator>
-            <AuthStack.Screen name="SignIn" component={SignIn} />
-            <AuthStack.Screen name="SignUp" component={SignUp} />
-            <AuthStack.Screen name="ResetPassword" component={ResetPassword} />
-            <AuthStack.Screen name="NewPassword" component={NewPassword} />
+            <AuthStack.Screen name="Connexion" component={Connexion} />
+            <AuthStack.Screen name="CreerCompte" component={CreerCompte} />
+            <AuthStack.Screen name="ReinitialiserMdp" component={ReinitialiserMdp} />
+            <AuthStack.Screen name="NouveauMdp" component={NouveauMdp} />
           </AuthStack.Navigator>
         )}
       </NavigationContainer>

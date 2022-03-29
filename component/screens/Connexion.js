@@ -6,9 +6,6 @@ import {
   Image,
   useWindowDimensions,
   ScrollView,
-  TextInput,
-  TouchableOpacity,
-  Button,
   Alert,
 } from "react-native";
 import Logo from "../images/logo.png";
@@ -16,8 +13,9 @@ import React, { useState,useContext } from "react";
 import CustomInput from "../CustomInput";
 import CustomButton from "../CustomButton";
 import {AuthContext} from "../context";
+import styles from "../StyleCo";
 
-const SignIn = ({ navigation }) => {
+const Connexion = ({ navigation }) => {
  const { signIn } = useContext(AuthContext);
   const { height } = useWindowDimensions();
 
@@ -49,7 +47,7 @@ const SignIn = ({ navigation }) => {
         />
         <CustomButton
           text="Mot de passe oublié ?"
-          onPress={() => navigation.navigate("ResetPassword")}
+          onPress={() => navigation.navigate("ReinitialiserMdp")}
           type="TERTIARY"
         />
 
@@ -74,7 +72,7 @@ const SignIn = ({ navigation }) => {
         />
         <CustomButton
           text="Vous n'avez pas de compte ? Créer en un"
-          onPress={() => navigation.navigate("SignUp")}
+          onPress={() => navigation.navigate("CreerCompte")}
           type="TERTIARY"
         />
       </View>
@@ -82,11 +80,5 @@ const SignIn = ({ navigation }) => {
   );
 };
 
-export default SignIn;
-const styles = StyleSheet.create({
-  root: {
-    alignItems: "center",
-    padding: 20,
-  },
-  logo: { width: "70%", maxWidth: 300, maxHeight: 200 },
-});
+export default Connexion;
+

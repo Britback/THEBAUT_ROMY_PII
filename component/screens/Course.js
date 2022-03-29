@@ -12,9 +12,9 @@ import {
   TextInput,
   SafeAreaView,
 } from "react-native";
-import { Items } from "../Database";
+import { Items } from "../Bdd";
 import Entypo from "react-native-vector-icons/Entypo";
-import styles from "../Style";
+import styles from "../StyleCorps";
 
 export default function Course({ route, navigation }) {
   const { vacID } = route.params; // permet de récuperer l'identifiant des vacances ou l'on a cliqué

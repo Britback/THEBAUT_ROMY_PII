@@ -4,8 +4,9 @@ import CustomInput from "../CustomInput";
 import CustomButton from "../CustomButton";
 import React, { useState, useContext } from "react";
 import { AuthContext } from "../context";
+import styles from "../StyleCo";
 
-export default function SignUp({ navigation }) {
+export default function CreerCompte({ navigation }) {
   const [username, setusername] = useState("");
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
@@ -61,7 +62,7 @@ export default function SignUp({ navigation }) {
 
         <CustomButton
           text="Vous avez déjà un compte ? Connectez-vous ici"
-          onPress={() => navigation.navigate("SignIn")}
+          onPress={() => navigation.navigate("Connexion")}
           type="TERTIARY"
         />
         <CustomButton
@@ -92,26 +93,3 @@ export default function SignUp({ navigation }) {
     </ScrollView>
   );
 }
-
-const styles = StyleSheet.create({
-  root: {
-    alignItems: "center",
-    padding: 20,
-  },
-
-  title: {
-    fontSize: 24,
-    fontWeight: "bold",
-    color: "#051C60",
-    margin: 10,
-  },
-
-  text: {
-    color: "gray",
-    marginVertical: 10,
-  },
-
-  link: {
-    color: "#FDB075",
-  },
-});
