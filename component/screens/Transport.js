@@ -12,7 +12,6 @@ import {
 } from "react-native";
 import { Items } from "../Bdd";
 import Entypo from "react-native-vector-icons/Entypo";
-import Pdf from "../Pdf";
 import AjoutFichier from "../AjoutFichier";
 import styles from "../StyleCorps";
 

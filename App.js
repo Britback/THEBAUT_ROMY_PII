@@ -1,5 +1,4 @@
 import * as React from "react";
-import { View, Text } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import ReinitialiserMdp from "./component/screens/ReinitialiserMdp";
@@ -13,7 +12,6 @@ import Transport from "./component/screens/Transport";
 import Logement from "./component/screens/Logement";
 import Course from "./component/screens/Course";
 import AjoutVac from "./component/screens/AjoutVac";
-import MapEssai from "./component/MapEssai";
 
 const AuthStack = createNativeStackNavigator();
 const Stack = createNativeStackNavigator();
@@ -27,7 +25,6 @@ const AccueilStackScreen = () => (
     <AccueilStack.Screen name="Logement" component={Logement} />
     <AccueilStack.Screen name="Course" component={Course} />
     <AccueilStack.Screen name="Connexion" component={Connexion} />
-    <AccueilStack.Screen name="MapEssai" component={MapEssai} />
   </AccueilStack.Navigator>
 );
 
@@ -58,7 +55,10 @@ function App() {
           <AuthStack.Navigator>
             <AuthStack.Screen name="Connexion" component={Connexion} />
             <AuthStack.Screen name="CreerCompte" component={CreerCompte} />
-            <AuthStack.Screen name="ReinitialiserMdp" component={ReinitialiserMdp} />
+            <AuthStack.Screen
+              name="ReinitialiserMdp"
+              component={ReinitialiserMdp}
+            />
             <AuthStack.Screen name="NouveauMdp" component={NouveauMdp} />
           </AuthStack.Navigator>
         )}

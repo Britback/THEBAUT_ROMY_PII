@@ -1,11 +1,8 @@
 import React, { useEffect, useState } from "react";
 import {
-  Animated,
-  Dimensions,
   Linking,
   ScrollView,
   StatusBar,
-  StyleSheet,
   Text,
   TextInput,
   TouchableOpacity,
@@ -21,10 +18,10 @@ export default function Logement({ route, navigation }) {
   const { vacID } = route.params; // permet de récuperer l'identifiant des vacances ou l'on a cliqué
   const [vac, setVac] = useState({});
   useEffect(() => {
-    const unsubscribe = navigation.addListener("focus", () => {
+    const db = navigation.addListener("focus", () => {
       getDataFromDB();
     });
-    return unsubscribe;
+    return db;
   }, [navigation]);
 
   // prend les vacs via vacID et récupere les infos
@@ -106,16 +103,7 @@ export default function Logement({ route, navigation }) {
             placeholder="Logement 1 (Clique pour changer nom)"
             style={{ color: "purple" }}
           />
-
-          {/* <TouchableOpacity
-            onPress={() => navigation.navigate("MapEssai")}
-            style={styles.minibouton}
-          >
-            <View style={styles.container2}>
-              <Text style={styles.text1}>MAPPPP</Text>
-            </View>
-          </TouchableOpacity> */}
-
+          
           <MapEssai />
         </View>
       </ScrollView>

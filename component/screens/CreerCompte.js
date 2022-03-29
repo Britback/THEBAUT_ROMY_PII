@@ -1,5 +1,4 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View, ScrollView } from "react-native";
+import { Text, View, ScrollView } from "react-native";
 import CustomInput from "../CustomInput";
 import CustomButton from "../CustomButton";
 import React, { useState, useContext } from "react";

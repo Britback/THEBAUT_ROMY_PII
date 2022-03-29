@@ -1,7 +1,6 @@
 import React from "react";
 import {
   StyleSheet,
-  Text,
   View,
   Button,
   TextInput,
@@ -75,7 +74,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: "bold",
     borderWidth: 2,
-    borderColor: "blue",
+    borderColor: "skyblue",
     margin: 20,
     borderRadius: 20,
     textAlign: "center",
