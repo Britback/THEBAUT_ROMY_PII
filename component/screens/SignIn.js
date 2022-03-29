@@ -9,6 +9,7 @@ import {
   TextInput,
   TouchableOpacity,
   Button,
+  Alert,
 } from "react-native";
 import Logo from "../images/logo.png";
 import React, { useState,useContext } from "react";
@@ -57,16 +58,17 @@ const SignIn = ({ navigation }) => {
           // onPress={onSignInFacebook}
           bgcolor="#E7EAF4"
           fgcolor="#4765A9"
+          onPress={()=> Alert.alert("Connexion", "Vous etes authentifié avec Facebook cliquez maintenant sur Connectez-vous")}
         />
         <CustomButton
           text="Connectez vous avec Google"
-          // onPress={onSignInGoogle}
+          onPress={()=> Alert.alert("Connexion", "Vous etes authentifié avec Facebook cliquez maintenant sur Connectez-vous")}
           bgcolor="#FAE9E4"
           fgcolor="#DD4D44"
         />
         <CustomButton
           text="Connectez vous avec Apple"
-          // onPress={onSignInApple}
+          onPress={()=> Alert.alert("Connexion", "Vous etes authentifié avec Facebook cliquez maintenant sur Connectez-vous")}
           bgcolor="#e3e3e3"
           fgcolor="#363636"
         />

@@ -16,41 +16,7 @@ export default function MapEssai() {
   });
 
   return (
-    <View style={{ marginTop: 50, flex: 1 }}>
-      <GooglePlacesAutocomplete
-        placeholder="Search"
-        fetchDetails={true}
-        GooglePlacesSearchQuery={{
-          rankby: "distance",
-        }}
-        onPress={(data, details = null) => {
-          // 'details' is provided when fetchDetails = true
-          console.log(data, details);
-          setRegion({
-            latitude: details.geometry.location.lat,
-            longitude: details.geometry.location.lng,
-            latitudeDelta: 0.0922,
-            longitudeDelta: 0.0421,
-          });
-        }}
-        query={{
-          key: "AIzaSyBOt4_zjmVwi16w_6PlJBknIH6dFfzn6PY ",
-          language: "fr",
-          components: "country:fr",
-          types: "establishment",
-          radius: 30000,
-          location: `${region.latitude}, ${region.longitude}`,
-        }}
-        styles={{
-          container: {
-            flex: 0,
-            position: "absolute",
-            width: "100%",
-            zIndex: 1,
-          },
-          listView: { backgroundColor: "white" },
-        }}
-      />
+    <View style={{ marginTop: 10, flex: 1 }}>
       <MapView
         style={styles.map}
         initialRegion={{
@@ -59,7 +25,7 @@ export default function MapEssai() {
           latitudeDelta: 0.0922,
           longitudeDelta: 0.0421,
         }}
-        provider="google"
+        
       >
         <Marker
           coordinate={{
@@ -82,7 +48,7 @@ export default function MapEssai() {
           }}
         >
           <Callout>
-            <Text>I'm here</Text>
+            <Text>JE SUIS LA</Text>
           </Callout>
         </Marker>
         <Circle center={pin} radius={1000} />

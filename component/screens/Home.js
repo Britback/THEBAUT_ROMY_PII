@@ -33,7 +33,6 @@ export default function Home({ navigation }) {
     setVacs(vacList);
   };
 
-
   const VacZone = ({ data }) => {
     return (
       <TouchableOpacity
@@ -68,13 +67,12 @@ export default function Home({ navigation }) {
     <View style={{ width: "100%", height: "100%" }}>
       <StatusBar backgroundColor="white" barStyle="dark-content" />
       <ScrollView>
-     
         <View style={{ marginBottom: 10, padding: 16 }}>
           <Text style={styles.text3}>Esprit léger</Text>
-          <Text style={styles.text2}>
-            Gestionnaire de vacs {"\n"} par RT
-          </Text>
-          <TouchableOpacity onPress={() => signOut()}>
+          <TouchableOpacity
+            onPress={() => signOut()}
+            style={{ marginLeft: 310 }}
+          >
             <Entypo
               name="log-out"
               style={{
@@ -83,6 +81,7 @@ export default function Home({ navigation }) {
               }}
             />
           </TouchableOpacity>
+          <Text style={styles.text2}>Gestionnaire de vacs {"\n"} par RT</Text>
         </View>
 
         <View

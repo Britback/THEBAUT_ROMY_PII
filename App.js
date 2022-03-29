@@ -13,7 +13,7 @@ import Transport from "./component/screens/Transport";
 import Logement from "./component/screens/Logement";
 import Course from "./component/screens/Course";
 import AjoutVac from "./component/screens/AjoutVac";
-import MapEssai from "./component/screens/MapEssai";
+import MapEssai from "./component/MapEssai";
 
 const AuthStack = createNativeStackNavigator();
 const Stack = createNativeStackNavigator();

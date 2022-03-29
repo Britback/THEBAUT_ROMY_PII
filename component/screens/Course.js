@@ -99,7 +99,7 @@ export default function Course({ route, navigation }) {
             </View>
           </View>
           <View style={styles.container}>
-            <View style={{height:80}}>
+            <View style={{ height: 80 }}>
               <FlatList data={courses} renderItem={renderCourse} />
             </View>
             <TextInput

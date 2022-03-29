@@ -2,16 +2,19 @@ import React, { useEffect, useState } from "react";
 import {
   Animated,
   Dimensions,
+  Linking,
   ScrollView,
   StatusBar,
   StyleSheet,
   Text,
+  TextInput,
   TouchableOpacity,
   View,
 } from "react-native";
 import { Items } from "../Database";
 import Entypo from "react-native-vector-icons/Entypo";
 import Ionicons from "react-native-vector-icons/Ionicons";
+import MapEssai from "../MapEssai";
 
 export default function Logement({ route, navigation }) {
   const { vacID } = route.params;
@@ -48,8 +51,9 @@ export default function Logement({ route, navigation }) {
           <Text style={styles.text3}>Logement {vac.vacName}</Text>
         </View>
         <View style={styles.vue4}>
-          <Text style={styles.text2}>{vac.collabName}</Text>
-          <Text style={styles.text2}>{vac.date}</Text>
+          <Text style={styles.text2}>
+            {vac.collabName} &amp; {vac.date}
+          </Text>
           <View style={styles.vue5}>
             <TouchableOpacity
               onPress={() => navigation.navigate("Course", { vacID })}
@@ -68,12 +72,9 @@ export default function Logement({ route, navigation }) {
               </View>
             </TouchableOpacity>
           </View>
-          <View style={styles.vue5}>
+         
             <View style={styles.container1}>
-              <Entypo
-                name="location-pin"
-                style={{ fontSize: 16, color: "blue" }}
-              />
+              
               <Ionicons
                 name="link-outline"
                 style={{
@@ -84,18 +85,22 @@ export default function Logement({ route, navigation }) {
                 }}
               />
             </View>
-            <Text>Adresse ici</Text>
-            <Entypo name="chevron-right" style={styles.chevron} />
-          </View>
-          <TouchableOpacity
-              onPress={() => navigation.navigate("MapEssai")}
-              style={styles.minibouton}
-            >
-              <View style={styles.container2}>
-                <Text style={styles.text1}>MAPPPP</Text>
-              </View>
+            <TouchableOpacity onPress={()=>{Linking.openURL("https://www.airbnb.fr/rooms/13103888?adults=2&previous_page_section_name=1000&federated_search_id=e57c5b63-1121-4e34-81d0-abe618367394")}}>
+            <Text>Clique pour accéder au lien</Text>
             </TouchableOpacity>
-          <Text>essai map ICI</Text>
+            <Text>Nom : </Text>
+            <TextInput placeholder="Logement 1 (Clique pour changer nom)" style={{color:"purple"}}/>
+        
+          {/* <TouchableOpacity
+            onPress={() => navigation.navigate("MapEssai")}
+            style={styles.minibouton}
+          >
+            <View style={styles.container2}>
+              <Text style={styles.text1}>MAPPPP</Text>
+            </View>
+          </TouchableOpacity> */}
+          
+          <MapEssai/>
         </View>
       </ScrollView>
       <View style={styles.container}>
@@ -112,10 +117,8 @@ const styles = StyleSheet.create({
     width: "100%",
     borderBottomRightRadius: 20,
     borderBottomLeftRadius: 20,
-    position: "relative",
     justifyContent: "center",
     alignItems: "center",
-    marginBottom: 4,
   },
   vue2: {
     width: "100%",
@@ -123,6 +126,7 @@ const styles = StyleSheet.create({
     paddingLeft: 16,
   },
   vue3: {
+    padding:20,
     marginVertical: 4,
     alignItems: "center",
   },
@@ -130,10 +134,13 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginVertical: 14,
   },
-  vue5: { flexDirection: "row", width: "80%", alignItems: "center" },
+  vue5: {
+    flexDirection: "row",
+    width: "80%",
+    alignItems: "center",
+    justifyContent: "center",
+  },
   container: {
-    position: "absolute",
-    bottom: 10,
     height: "8%",
     width: "100%",
     justifyContent: "center",
@@ -150,7 +157,6 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     justifyContent: "center",
     alignItems: "center",
-    marginBottom: 8,
   },
   container1: {
     color: "blue",
