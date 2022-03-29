@@ -14,21 +14,21 @@ import {
 } from "react-native";
 import { Items } from "../Database";
 import Entypo from "react-native-vector-icons/Entypo";
-import Ionicons from "react-native-vector-icons/Ionicons";
+import styles from "../Style";
 
 export default function Course({ route, navigation }) {
-  const { vacID } = route.params;
+  const { vacID } = route.params; // permet de récuperer l'identifiant des vacances ou l'on a cliqué
   const [courses, setCourses] = useState([]);
   const [course, setCourse] = useState("");
   const [vac, setVac] = useState({});
   useEffect(() => {
-    const unsubscribe = navigation.addListener("focus", () => {
+    const db = navigation.addListener("focus", () => {
       getDataFromDB();
     });
-    return unsubscribe;
+    return db;
   }, [navigation]);
 
-  // prend les vacs via vacID
+  // prend les vacs correspondantes via vacID et récupere les infos
   const getDataFromDB = async () => {
     for (let index = 0; index < Items.length; index++) {
       if (Items[index].id == vacID) {
@@ -38,6 +38,7 @@ export default function Course({ route, navigation }) {
     }
   };
 
+  // affiche les courses que l'on entre dans l'input et appelle la supression de l'element lorsque l'on clique dessus
   const renderCourse = ({ item }) => {
     return (
       <TouchableOpacity onPress={() => suppCourse(item.id)}>
@@ -46,6 +47,7 @@ export default function Course({ route, navigation }) {
     );
   };
 
+  // permet d'ajouter une course à la liste et de lui assigné un identifiant, puis vide le champ
   const ajouterCourse = () => {
     const newCourses = courses.slice();
     newCourses.push({
@@ -56,11 +58,16 @@ export default function Course({ route, navigation }) {
     setCourse("");
   };
 
+  // supprime l'element choisi (en cliquant dessus voir ci-dessus)
   const suppCourse = (id) => {
     const newCourses = courses.slice();
     setCourses(newCourses.filter((course) => course.id !== id));
   };
 
+  // comprend le retour à la page précédente, affiche les informations propres aux vacances sélectionnées
+  // permet l'acces aux pages transport et logement
+  // affiche une liste des éléments entrés en appelant renderCourse
+  // affiche un input et un bouton appelant l'ajout d'élément
   return (
     <SafeAreaView>
       <View style={{ width: "100%", height: "100%", position: "relative" }}>
@@ -77,8 +84,9 @@ export default function Course({ route, navigation }) {
             <Text style={styles.text3}>Courses {vac.vacName}</Text>
           </View>
           <View style={styles.vue4}>
-            <Text style={styles.text2}>{vac.collabName}</Text>
-            <Text style={styles.text2}>{vac.date}</Text>
+            <Text style={styles.text2}>
+              {vac.collabName} &amp; {vac.date}
+            </Text>
             <View style={styles.vue5}>
               <TouchableOpacity
                 onPress={() => navigation.navigate("Transport", { vacID })}
@@ -117,102 +125,3 @@ export default function Course({ route, navigation }) {
     </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  vue1: {
-    width: "100%",
-    borderBottomRightRadius: 20,
-    borderBottomLeftRadius: 20,
-    position: "relative",
-    justifyContent: "center",
-    alignItems: "center",
-    marginBottom: 4,
-  },
-  vue2: {
-    width: "100%",
-    justifyContent: "space-between",
-    paddingTop: 16,
-    paddingLeft: 16,
-  },
-  vue3: {
-    marginVertical: 4,
-    alignItems: "center",
-    justifyContent: "space-between",
-  },
-  vue4: {
-    alignItems: "center",
-    justifyContent: "space-between",
-    marginVertical: 14,
-    paddingBottom: 20,
-  },
-  vue5: { flexDirection: "row", width: "80%", alignItems: "center" },
-  container: {
-    position: "absolute",
-    bottom: 10,
-    height: "8%",
-    width: "100%",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  chevron: {
-    fontSize: 18,
-    padding: 12,
-    borderRadius: 10,
-  },
-  container2: {
-    width: "100%",
-    height: 100,
-    borderRadius: 10,
-    position: "relative",
-    justifyContent: "center",
-    alignItems: "center",
-    marginBottom: 8,
-  },
-  container1: {
-    color: "blue",
-    alignItems: "center",
-    justifyContent: "center",
-    padding: 12,
-    borderRadius: 100,
-    marginRight: 10,
-  },
-
-  text: {
-    fontSize: 12,
-    fontWeight: "500",
-    letterSpacing: 1,
-    color: "white",
-    textTransform: "uppercase",
-  },
-  text1: {
-    fontSize: 12,
-    fontWeight: "600",
-    marginBottom: 2,
-  },
-  text2: {
-    fontSize: 12,
-    fontWeight: "400",
-    letterSpacing: 1,
-    opacity: 0.5,
-    lineHeight: 20,
-    maxWidth: "85%",
-    maxHeight: 44,
-    marginBottom: 18,
-  },
-  text3: {
-    fontSize: 24,
-    fontWeight: "600",
-    letterSpacing: 0.5,
-    marginVertical: 4,
-    maxWidth: "84%",
-  },
-  bouton: {
-    backgroundColor: "blue",
-    height: "90%",
-    width: "86%",
-    borderRadius: 20,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  minibouton: { width: "48%", marginVertical: 14 },
-});
