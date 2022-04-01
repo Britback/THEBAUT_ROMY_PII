@@ -90,6 +90,36 @@ export default function Transport({ route, navigation, data }) {
             <Text style={styles.text2}>
               {vac.collabName} &amp; {vac.date}
             </Text>
+
+            <FlatList data={vacs} renderItem={renderCollab} />
+
+            <TextInput
+              value={collab}
+              placeholder="Nom participant"
+              onChangeText={(text) => setCollab(text)}
+              style={{
+                borderWidth: 2,
+                borderColor: "skyblue",
+                borderRadius: 5,
+                width: 200,
+                height:50,
+                textAlign: "center",
+              }}
+            />
+            <TouchableOpacity
+              onPress={ajoutercollab}
+              style={{
+                backgroundColor: "skyblue",
+                height: "15%",
+                width: "60%",
+                borderRadius: 20,
+                justifyContent: "center",
+                alignItems: "center",
+                margin:20,
+              }}
+            >
+              <Text style={{color:"white"}}>Ajouter participant</Text>
+            </TouchableOpacity>
             <View style={styles.vue5}>
               <TouchableOpacity
                 onPress={() => navigation.navigate("Logement", { vacID })}
@@ -108,17 +138,6 @@ export default function Transport({ route, navigation, data }) {
                 </View>
               </TouchableOpacity>
             </View>
-            <FlatList data={vacs} renderItem={renderCollab} />
-
-            <TextInput
-              value={collab}
-              placeholder="Nom du nouveau compagnon de voyage"
-              onChangeText={(text) => setCollab(text)}
-            />
-            <TouchableOpacity onPress={ajoutercollab}>
-              <Text>Ajouter participant</Text>
-            </TouchableOpacity>
-            <Text>BILLETS</Text>
           </View>
 
           <AjoutFichier />

@@ -20,22 +20,42 @@ class AjoutFichier extends React.Component {
   };
   render() {
     return (
-      // <form onSubmit={this.handleSubmit}>
-      //   <label>
-      //     Ajouter un billet :
-      //     <input type="file" ref={this.fileInput} />
-      //   </label>
-      //   <br />
-      //   <button type="submit" style={{backgroundColor: "blue",color:"white",
-      //    height: "90%",
-      //    width: "80%",
-      //    borderRadius: 20,
-      //    justifyContent: "center",
-      //    alignItems: "center",}}>Ajouter</button>
-      // </form>
-      <TouchableOpacity onPress={() => this.pickfile()}>
-        <Text>bouton ajout fichier</Text>
-      </TouchableOpacity>
+      <View
+        style={{
+          color: "blue",
+          alignItems: "center",
+          justifyContent: "center",
+          padding: 12,
+          borderRadius: 100,
+          marginRight: 10,
+          width: "100%", height: 100, position: "relative" 
+        }}
+      >
+        <TouchableOpacity
+          onPress={() => this.pickfile()}
+          style={{
+            backgroundColor: "blue",
+            height: "60%",
+            width: "86%",
+            borderRadius: 20,
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <Text
+            style={{
+              fontSize: 12,
+              fontWeight: "500",
+              letterSpacing: 1,
+              color: "white",
+              textTransform: "uppercase",
+              
+            }}
+          >
+            Ajouter un fichier
+          </Text>
+        </TouchableOpacity>
+      </View>
     );
   }
 }

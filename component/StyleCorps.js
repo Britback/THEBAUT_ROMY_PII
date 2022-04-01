@@ -53,6 +53,7 @@ export default StyleSheet.create({
           padding: 12,
           borderRadius: 100,
           marginRight: 10,
+          
         },
       
         text: {
@@ -91,6 +92,7 @@ export default StyleSheet.create({
           borderRadius: 20,
           justifyContent: "center",
           alignItems: "center",
+          margin:20,
         },
         minibouton: { width: "48%", marginVertical: 14 },
       })

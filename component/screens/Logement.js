@@ -78,17 +78,7 @@ export default function Logement({ route, navigation }) {
             </TouchableOpacity>
           </View>
 
-          <View style={styles.container1}>
-            <Ionicons
-              name="link-outline"
-              style={{
-                fontSize: 24,
-                color: "blue",
-                padding: 8,
-                borderRadius: 100,
-              }}
-            />
-          </View>
+          <View style={styles.container1}></View>
           <TouchableOpacity
             onPress={() => {
               Linking.openURL(
@@ -96,14 +86,25 @@ export default function Logement({ route, navigation }) {
               );
             }}
           >
-            <Text>Clique pour accéder au lien</Text>
+            <Text>
+              <Ionicons
+                name="link-outline"
+                style={{
+                  fontSize: 24,
+                  color: "blue",
+                  padding: 8,
+                  borderRadius: 100,
+                }}
+              />
+              Logement 1
+            </Text>
           </TouchableOpacity>
           <Text>Nom : </Text>
           <TextInput
             placeholder="Logement 1 (Clique pour changer nom)"
             style={{ color: "purple" }}
           />
-          
+
           <MapEssai />
         </View>
       </ScrollView>

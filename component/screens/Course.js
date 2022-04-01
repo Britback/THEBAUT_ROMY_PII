@@ -109,7 +109,14 @@ export default function Course({ route, navigation }) {
             </View>
             <TextInput
               value={course}
-              style={{ height: "50%" }}
+              style={{
+                borderWidth: 2,
+                borderColor: "skyblue",
+                borderRadius: 5,
+                width: 200,
+                height:50,
+                textAlign: "center",
+              }}
               placeholder="Ex: Poisson"
               onChangeText={(text) => setCourse(text)}
             />
