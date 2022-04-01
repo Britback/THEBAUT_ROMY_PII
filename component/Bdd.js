@@ -6,8 +6,7 @@ export const Items = [
     collabName: "John, Ana",
     isDone: false,
     vacImage: require("./images/logo.png"),
-    ticketsPdf: require("./images/ticket1.jpg"),
-    ticketsPdf1: require("./images/ticket2.jpg"),
+    ticketsPdf: [require("./images/ticket1.jpg"),require("./images/ticket2.jpg"),]
   },
   {
     id: 2,

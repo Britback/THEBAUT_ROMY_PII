@@ -2,7 +2,7 @@ import {Text, View, ScrollView } from "react-native";
 import CustomInput from "../CustomInput";
 import CustomButton from "../CustomButton";
 import React, { useState } from "react";
-import styles from "../StyleCo";
+import styles from "../StyleConn";
 
 export default function NouveauMdp({navigation}) {
   const [code, setCode] = useState("");

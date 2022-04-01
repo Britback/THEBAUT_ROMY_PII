@@ -11,7 +11,7 @@ import React, { useState,useContext } from "react";
 import CustomInput from "../CustomInput";
 import CustomButton from "../CustomButton";
 import {AuthContext} from "../context";
-import styles from "../StyleCo";
+import styles from "../StyleConn";
 
 const Connexion = ({ navigation }) => {
  const { signIn } = useContext(AuthContext);

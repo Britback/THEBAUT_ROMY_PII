@@ -3,7 +3,7 @@ import CustomInput from "../CustomInput";
 import CustomButton from "../CustomButton";
 import React, { useState, useContext } from "react";
 import { AuthContext } from "../context";
-import styles from "../StyleCo";
+import styles from "../StyleConn";
 
 export default function CreerCompte({ navigation }) {
   const [username, setusername] = useState("");

@@ -70,7 +70,7 @@ export default function Transport({ route, navigation, data }) {
   // affiche les nouveaux collaborateurs que l'on a entré en appelant renderCollab
   // affiche un input et un bouton appelant l'ajout d'élément
   // affiche les billets de transport que l'on a ajouté
-  // permet l'ajout de billets 
+  // permet l'ajout de billets
   return (
     <SafeAreaView>
       <View style={{ width: "100%", height: "100%", position: "relative" }}>
@@ -116,27 +116,12 @@ export default function Transport({ route, navigation, data }) {
               onChangeText={(text) => setCollab(text)}
             />
             <TouchableOpacity onPress={ajoutercollab}>
-              <Text>Ajouter</Text>
+              <Text>Ajouter participant</Text>
             </TouchableOpacity>
-
             <Text>BILLETS</Text>
-            {vacs.map((data) => {
-              return (
-                <View>
-                  <Image
-                    source={vac.ticketsPdf}
-                    key={data.id}
-                    style={{ width: 100, height: 300 }}
-                  />
-                  <Image
-                    source={vac.ticketsPdf1}
-                    key={data.id}
-                    style={{ width: 150, height: 300 }}
-                  />
-                </View>
-              );
-            })}
           </View>
+
+          <AjoutFichier />
         </ScrollView>
       </View>
     </SafeAreaView>
