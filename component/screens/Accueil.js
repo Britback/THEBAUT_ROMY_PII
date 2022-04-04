@@ -81,7 +81,7 @@ export default function Home({ navigation }) {
               }}
             />
           </TouchableOpacity>
-          <Text style={styles.text2}>Gestionnaire de vacs {"\n"} par RT</Text>
+          <Text style={styles.text2}>Gestionnaire de vacances {"\n"} par RT</Text>
         </View>
 
         <View

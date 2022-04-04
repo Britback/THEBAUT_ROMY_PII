@@ -104,8 +104,8 @@ export default function Course({ route, navigation }) {
             </View>
           </View>
           <View style={styles.container}>
-            <View style={{ height: 80 }}>
-              <FlatList data={courses} renderItem={renderCourse} />
+            <View style={{ height: 80 , width:100, alignItems:"center"}}>
+              <FlatList data={courses} renderItem={renderCourse}/>
             </View>
             <TextInput
               value={course}
@@ -123,6 +123,7 @@ export default function Course({ route, navigation }) {
             <TouchableOpacity style={styles.bouton} onPress={ajouterCourse}>
               <Text style={styles.text}>Ajouter des courses</Text>
             </TouchableOpacity>
+            <Text style={styles.text2}> Appuyez sur l'élément pour le supprimer</Text>
           </View>
         </ScrollView>
       </View>

@@ -78,6 +78,6 @@ const styles = StyleSheet.create({
     margin: 20,
     borderRadius: 20,
     textAlign: "center",
-    height:50,
+    height: 50,
   },
 });
