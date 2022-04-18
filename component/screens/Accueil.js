@@ -57,8 +57,8 @@ export default function Home({ navigation }) {
           <Image style={{ height: 75, width: 80 }} source={data.vacImage} />
         </View>
         <Text style={styles.text1}>{data.vacName}</Text>
-        <Text style={styles.text1}> {data.date}</Text>
-        <Text> Avec {data.collabName}</Text>
+        <Text style={styles.text2}> {data.date}</Text>
+        <Text style={styles.text2}> Avec {data.collabName}</Text>
       </TouchableOpacity>
     );
   };
@@ -67,7 +67,7 @@ export default function Home({ navigation }) {
     <View style={{ width: "100%", height: "100%" }}>
       <StatusBar backgroundColor="white" barStyle="dark-content" />
       <ScrollView>
-        <View style={{ marginBottom: 10, padding: 16 }}>
+        <View style={{padding: 20,marginTop:70 }}>
           <Text style={styles.text3}>Esprit léger</Text>
           <TouchableOpacity
             onPress={() => signOut()}
@@ -81,7 +81,9 @@ export default function Home({ navigation }) {
               }}
             />
           </TouchableOpacity>
-          <Text style={styles.text2}>Gestionnaire de vacances {"\n"} par RT</Text>
+          <Text style={styles.text2}>
+            Gestionnaire de vacances {"\n"}par RT
+          </Text>
         </View>
 
         <View
@@ -104,7 +106,16 @@ export default function Home({ navigation }) {
               onPress={() => navigation.navigate("AjoutVac")}
               style={{ width: "48%", marginVertical: 14 }}
             >
-              <Text style={styles.text1}>Ajouter des vacances</Text>
+              <Text style={styles.text1}>
+                <Entypo
+                  name="plus"
+                  style={{
+                    fontSize: 19,
+                    borderRadius: 8,
+                  }}
+                />
+                Ajouter des vacances
+              </Text>
             </TouchableOpacity>
           </View>
           <View
@@ -162,7 +173,7 @@ const styles = StyleSheet.create({
     lineHeight: 20,
     maxWidth: "85%",
     maxHeight: 44,
-    marginBottom: 18,
+    marginBottom: 10,
   },
   text3: {
     fontSize: 15,
@@ -177,8 +188,8 @@ const styles = StyleSheet.create({
     width: "50%",
     height: "24%",
     backgroundColor: "yellow",
-    top: 0,
-    left: 0,
+    top: -15,
+    left: 35,
     borderTopLeftRadius: 10,
     borderBottomRightRadius: 10,
     alignItems: "center",

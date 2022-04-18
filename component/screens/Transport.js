@@ -43,7 +43,7 @@ export default function Transport({ route, navigation, data }) {
   const renderCollab = ({ item }) => {
     return (
       <TouchableOpacity onPress={() => suppCollab(item.id)}>
-        <Text>{item.collabName}</Text>
+        <Text> et {item.collabName}</Text>
       </TouchableOpacity>
     );
   };
@@ -91,7 +91,7 @@ export default function Transport({ route, navigation, data }) {
               {vac.collabName} &amp; {vac.date}
             </Text>
 
-            <FlatList data={vacs} renderItem={renderCollab} />
+            <FlatList data={vacs} renderItem={renderCollab} horizontal={true}/>
 
             <TextInput
               value={collab}

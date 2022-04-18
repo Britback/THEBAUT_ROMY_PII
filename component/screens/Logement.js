@@ -90,18 +90,16 @@ export default function Logement({ route, navigation }) {
               <Ionicons
                 name="link-outline"
                 style={{
-                  fontSize: 24,
+                  fontSize: 20,
                   color: "blue",
-                  padding: 8,
-                  borderRadius: 100,
                 }}
               />
-              Logement 1
+              --&gt; Logement 1
             </Text>
           </TouchableOpacity>
           <Text>Nom : </Text>
           <TextInput
-            placeholder="Logement 1 (Clique pour changer nom)"
+            placeholder="Logement 1 (Clique pour changer de nom)"
             style={{ color: "purple" }}
           />
 
@@ -113,6 +111,9 @@ export default function Logement({ route, navigation }) {
           <Text style={styles.text}>Ajouter un logement</Text>
         </TouchableOpacity>
       </View>
+      <TouchableOpacity onPress={() => navigation.goBack()}>
+        <Entypo name="chevron-left" style={styles.chevron} />
+      </TouchableOpacity>
     </View>
   );
 }

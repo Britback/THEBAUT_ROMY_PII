@@ -104,7 +104,7 @@ export default function Course({ route, navigation }) {
             </View>
           </View>
           <View style={styles.container}>
-            <View style={{ height: 80 , width:100, alignItems:"center"}}>
+            <View style={{ height: 110 , width:100, alignItems:"center"}}>
               <FlatList data={courses} renderItem={renderCourse}/>
             </View>
             <TextInput

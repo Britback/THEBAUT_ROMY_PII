@@ -19,7 +19,7 @@ const AccueilStack = createNativeStackNavigator();
 
 const AccueilStackScreen = () => (
   <AccueilStack.Navigator screenOptions={{ headerShown: false }}>
-    <AccueilStack.Screen name="Accueil" component={Accueil} />
+    <AccueilStack.Screen name="Home" component={Accueil} />
     <AccueilStack.Screen name="AjoutVac" component={AjoutVac} />
     <AccueilStack.Screen name="Transport" component={Transport} />
     <AccueilStack.Screen name="Logement" component={Logement} />
@@ -48,7 +48,9 @@ function App() {
     <AuthContext.Provider value={authContext}>
       <NavigationContainer>
         {userToken ? (
-          <Stack.Navigator>
+          <Stack.Navigator screenOptions={{
+            headerShown: false
+          }}>
             <Stack.Screen name="Accueil" component={AccueilStackScreen} />
           </Stack.Navigator>
         ) : (

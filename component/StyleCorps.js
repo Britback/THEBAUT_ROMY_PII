@@ -65,9 +65,11 @@ export default StyleSheet.create({
           textTransform: "uppercase",
         },
         text1: {
-          fontSize: 14,
+          fontSize: 17,
           fontWeight: "600",
-          color:"skyblue"
+          color:"#002aff",
+          fontWeight:'bold',
+          textDecorationLine:'underline'
         },
         text2: {
           fontSize: 12,
@@ -95,5 +97,5 @@ export default StyleSheet.create({
           alignItems: "center",
           margin:20,
         },
-        minibouton: { width: "48%", marginVertical: 14 },
+        minibouton: { width: "48%", marginVertical: 14,},
       })
