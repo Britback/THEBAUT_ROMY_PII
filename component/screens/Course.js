@@ -89,23 +89,19 @@ export default function Course({ route, navigation }) {
                 onPress={() => navigation.navigate("Transport", { vacID })}
                 style={styles.minibouton}
               >
-                <View style={styles.container2}>
-                  <Text style={styles.text1}>Transport</Text>
-                </View>
+                <Text style={{ color: "white" }}>Transport</Text>
               </TouchableOpacity>
               <TouchableOpacity
                 onPress={() => navigation.navigate("Logement", { vacID })}
                 style={styles.minibouton}
               >
-                <View style={styles.container2}>
-                  <Text style={styles.text1}>Logement</Text>
-                </View>
+                <Text style={{ color: "white" }}>Logement</Text>
               </TouchableOpacity>
             </View>
           </View>
           <View style={styles.container}>
-            <View style={{ height: 110 , width:100, alignItems:"center"}}>
-              <FlatList data={courses} renderItem={renderCourse}/>
+            <View style={{ height: 110, width: 100, alignItems: "center" }}>
+              <FlatList data={courses} renderItem={renderCourse} />
             </View>
             <TextInput
               value={course}
@@ -114,7 +110,7 @@ export default function Course({ route, navigation }) {
                 borderColor: "skyblue",
                 borderRadius: 5,
                 width: 200,
-                height:50,
+                height: 50,
                 textAlign: "center",
               }}
               placeholder="Ex: Poisson"
@@ -123,7 +119,10 @@ export default function Course({ route, navigation }) {
             <TouchableOpacity style={styles.bouton} onPress={ajouterCourse}>
               <Text style={styles.text}>Ajouter des courses</Text>
             </TouchableOpacity>
-            <Text style={styles.text2}> Appuyez sur l'élément pour le supprimer</Text>
+            <Text style={styles.text2}>
+              {" "}
+              Appuyez sur l'élément pour le supprimer
+            </Text>
           </View>
         </ScrollView>
       </View>

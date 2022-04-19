@@ -1,16 +1,6 @@
 import React from "react";
 import * as DocumentPicker from "expo-document-picker";
-import {
-  ScrollView,
-  StatusBar,
-  Text,
-  TouchableOpacity,
-  View,
-  FlatList,
-  SafeAreaView,
-  TextInput,
-  Image,
-} from "react-native";
+import { Text, TouchableOpacity, View } from "react-native";
 
 class AjoutFichier extends React.Component {
   pickfile = () => {
@@ -28,7 +18,9 @@ class AjoutFichier extends React.Component {
           padding: 12,
           borderRadius: 100,
           marginRight: 10,
-          width: "100%", height: 100, position: "relative" 
+          width: "100%",
+          height: 100,
+          position: "relative",
         }}
       >
         <TouchableOpacity
@@ -49,7 +41,6 @@ class AjoutFichier extends React.Component {
               letterSpacing: 1,
               color: "white",
               textTransform: "uppercase",
-              
             }}
           >
             Ajouter un fichier

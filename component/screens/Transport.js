@@ -8,7 +8,6 @@ import {
   FlatList,
   SafeAreaView,
   TextInput,
-  Image,
 } from "react-native";
 import { Items } from "../Bdd";
 import Entypo from "react-native-vector-icons/Entypo";
@@ -91,57 +90,49 @@ export default function Transport({ route, navigation, data }) {
               {vac.collabName} &amp; {vac.date}
             </Text>
 
-            <FlatList data={vacs} renderItem={renderCollab} horizontal={true}/>
-
-            <TextInput
-              value={collab}
-              placeholder="Nom participant"
-              onChangeText={(text) => setCollab(text)}
-              style={{
-                borderWidth: 2,
-                borderColor: "skyblue",
-                borderRadius: 5,
-                width: 200,
-                height:50,
-                textAlign: "center",
-              }}
-            />
-            <TouchableOpacity
-              onPress={ajoutercollab}
-              style={{
-                backgroundColor: "skyblue",
-                height: "15%",
-                width: "60%",
-                borderRadius: 20,
-                justifyContent: "center",
-                alignItems: "center",
-                margin:20,
-              }}
-            >
-              <Text style={{color:"white"}}>Ajouter participant</Text>
-            </TouchableOpacity>
+            <FlatList data={vacs} renderItem={renderCollab} horizontal={true} />
+            <View style={{ flexDirection: "row" }}>
+              <TextInput
+                value={collab}
+                placeholder="Nom participant"
+                onChangeText={(text) => setCollab(text)}
+                style={{
+                  borderWidth: 2,
+                  borderColor: "skyblue",
+                  borderRadius: 5,
+                  width: 200,
+                  height: 50,
+                  textAlign: "center",
+                }}
+              />
+              <Entypo
+                onPress={ajoutercollab}
+                name="plus"
+                style={{
+                  fontSize: 30,
+                  borderRadius: 8,
+                  alignSelf: "center",
+                  color: "blue",
+                }}
+              />
+            </View>
             <View style={styles.vue5}>
               <TouchableOpacity
                 onPress={() => navigation.navigate("Logement", { vacID })}
                 style={styles.minibouton}
               >
-                <View style={styles.container2}>
-                  <Text style={styles.text1}>Logement</Text>
-                </View>
+                <Text style={{ color: "white" }}>Logement</Text>
               </TouchableOpacity>
               <TouchableOpacity
                 onPress={() => navigation.navigate("Course", { vacID })}
                 style={styles.minibouton}
               >
-                <View style={styles.container2}>
-                  <Text style={styles.text1}>Courses</Text>
-                </View>
+                <Text style={{ color: "white" }}>Courses</Text>
               </TouchableOpacity>
             </View>
           </View>
-
-          <AjoutFichier />
         </ScrollView>
+        <AjoutFichier />
       </View>
     </SafeAreaView>
   );

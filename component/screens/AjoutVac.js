@@ -7,16 +7,21 @@ import {
   TouchableOpacity,
 } from "react-native";
 import Entypo from "react-native-vector-icons/Entypo";
-
+import DateTimePicker from "@react-native-community/datetimepicker";
 class AjoutVac extends React.Component {
   constructor() {
     super();
     this.state = {
       nom: "",
-      date: "",
+      date: new Date(),
       compagnon: "",
     };
   }
+
+  onChange = (selectedDate) => {
+    const currentDate = selectedDate;
+    this.setState({ date: currentDate });
+  };
 
   ajouter() {
     console.warn(this.state);
@@ -35,13 +40,26 @@ class AjoutVac extends React.Component {
           }}
           style={styles.input}
         />
-        <TextInput
-          placeholder="Date des vacances"
-          onChangeText={(text) => {
-            this.setState({ date: text });
+        <Text>Date de début : </Text>
+        <DateTimePicker
+          style={{ alignSelf: "center", width: 100, heigth: 50 }}
+          testID="dateTimePicker"
+          value={this.state.date}
+          is24Hour={true}
+          onChange={() => {
+            this.onChange;
           }}
-          style={styles.input}
-          keyboardType={"number-pad"}
+        />
+
+        <Text>Date de fin : </Text>
+        <DateTimePicker
+          style={{ alignSelf: "center", width: 100, heigth: 50 }}
+          testID="dateTimePicker"
+          value={this.state.date}
+          is24Hour={true}
+          onChange={() => {
+            this.onChange;
+          }}
         />
         <TextInput
           style={styles.input}
@@ -55,6 +73,9 @@ class AjoutVac extends React.Component {
           onPress={() => {
             this.ajouter();
           }}
+          onPress={() =>
+            Alert.alert("Vacances", "Vous avez bien ajouté vos vacances")
+          }
         />
       </View>
     );

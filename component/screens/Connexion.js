@@ -1,4 +1,3 @@
-import { StatusBar } from "expo-status-bar";
 import {
   View,
   Image,
@@ -7,14 +6,14 @@ import {
   Alert,
 } from "react-native";
 import Logo from "../images/logo.png";
-import React, { useState,useContext } from "react";
+import React, { useState, useContext } from "react";
 import CustomInput from "../CustomInput";
 import CustomButton from "../CustomButton";
-import {AuthContext} from "../context";
+import { AuthContext } from "../context";
 import styles from "../StyleConn";
 
 const Connexion = ({ navigation }) => {
- const { signIn } = useContext(AuthContext);
+  const { signIn } = useContext(AuthContext);
   const { height } = useWindowDimensions();
 
   const [username, setusername] = useState("");
@@ -39,10 +38,7 @@ const Connexion = ({ navigation }) => {
           setValue={setpassword}
           secureTextEntry={true}
         />
-        <CustomButton
-          text="Connectez vous"
-          onPress={() => signIn()}
-        />
+        <CustomButton text="Connectez vous" onPress={() => signIn()} />
         <CustomButton
           text="Mot de passe oublié ?"
           onPress={() => navigation.navigate("ReinitialiserMdp")}
@@ -54,17 +50,32 @@ const Connexion = ({ navigation }) => {
           // onPress={onSignInFacebook}
           bgcolor="#E7EAF4"
           fgcolor="#4765A9"
-          onPress={()=> Alert.alert("Connexion", "Vous etes authentifié avec Facebook cliquez maintenant sur Connectez-vous")}
+          onPress={() =>
+            Alert.alert(
+              "Connexion",
+              "Vous etes authentifié avec Facebook cliquez maintenant sur Connectez-vous"
+            )
+          }
         />
         <CustomButton
           text="Connectez vous avec Google"
-          onPress={()=> Alert.alert("Connexion", "Vous etes authentifié avec Facebook cliquez maintenant sur Connectez-vous")}
+          onPress={() =>
+            Alert.alert(
+              "Connexion",
+              "Vous etes authentifié avec Facebook cliquez maintenant sur Connectez-vous"
+            )
+          }
           bgcolor="#FAE9E4"
           fgcolor="#DD4D44"
         />
         <CustomButton
           text="Connectez vous avec Apple"
-          onPress={()=> Alert.alert("Connexion", "Vous etes authentifié avec Facebook cliquez maintenant sur Connectez-vous")}
+          onPress={() =>
+            Alert.alert(
+              "Connexion",
+              "Vous etes authentifié avec Facebook cliquez maintenant sur Connectez-vous"
+            )
+          }
           bgcolor="#e3e3e3"
           fgcolor="#363636"
         />
@@ -79,4 +90,3 @@ const Connexion = ({ navigation }) => {
 };
 
 export default Connexion;
-

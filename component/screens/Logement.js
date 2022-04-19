@@ -64,17 +64,13 @@ export default function Logement({ route, navigation }) {
               onPress={() => navigation.navigate("Course", { vacID })}
               style={styles.minibouton}
             >
-              <View style={styles.container2}>
-                <Text style={styles.text1}>Courses</Text>
-              </View>
+              <Text style={{ color: "white" }}>Courses</Text>
             </TouchableOpacity>
             <TouchableOpacity
               onPress={() => navigation.navigate("Transport", { vacID })}
               style={styles.minibouton}
             >
-              <View style={styles.container2}>
-                <Text style={styles.text1}>Transport</Text>
-              </View>
+              <Text style={{ color: "white" }}>Transport</Text>
             </TouchableOpacity>
           </View>
 

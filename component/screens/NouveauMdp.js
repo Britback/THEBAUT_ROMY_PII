@@ -1,10 +1,10 @@
-import {Text, View, ScrollView } from "react-native";
+import { Text, View, ScrollView } from "react-native";
 import CustomInput from "../CustomInput";
 import CustomButton from "../CustomButton";
 import React, { useState } from "react";
 import styles from "../StyleConn";
 
-export default function NouveauMdp({navigation}) {
+export default function NouveauMdp({ navigation }) {
   const [code, setCode] = useState("");
   const [newPassword, setnewPassword] = useState("");
   return (
@@ -19,7 +19,10 @@ export default function NouveauMdp({navigation}) {
           setValue={setnewPassword}
         />
 
-        <CustomButton text="Envoyer" onPress={() => navigation.navigate("Accueil") }/>
+        <CustomButton
+          text="Envoyer"
+          onPress={() => navigation.navigate("Accueil")}
+        />
 
         <CustomButton
           text="Retour à la connexion"
@@ -30,4 +33,3 @@ export default function NouveauMdp({navigation}) {
     </ScrollView>
   );
 }
-

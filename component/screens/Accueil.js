@@ -41,6 +41,9 @@ export default function Home({ navigation }) {
           width: "40%",
           marginVertical: 14,
           justifyContent: "space-between",
+          backgroundColor: "lightblue",
+          alignSelf: "center",
+          borderRadius: 20,
         }}
       >
         <View style={styles.container2}>
@@ -67,7 +70,7 @@ export default function Home({ navigation }) {
     <View style={{ width: "100%", height: "100%" }}>
       <StatusBar backgroundColor="white" barStyle="dark-content" />
       <ScrollView>
-        <View style={{padding: 20,marginTop:70 }}>
+        <View style={{ padding: 20, marginTop: 40 }}>
           <Text style={styles.text3}>Esprit léger</Text>
           <TouchableOpacity
             onPress={() => signOut()}
@@ -76,14 +79,12 @@ export default function Home({ navigation }) {
             <Entypo
               name="log-out"
               style={{
-                fontSize: 14,
+                fontSize: 25,
                 borderRadius: 10,
               }}
             />
           </TouchableOpacity>
-          <Text style={styles.text2}>
-            Gestionnaire de vacances {"\n"}par RT
-          </Text>
+          <Text style={{ fontSize: 13 }}>Gestionnaire de vacances {"\n"}</Text>
         </View>
 
         <View
@@ -92,16 +93,6 @@ export default function Home({ navigation }) {
           }}
         >
           <View style={styles.vue3}>
-            <View
-              style={{
-                flexDirection: "row",
-                alignItems: "center",
-                padding: 20,
-              }}
-            >
-              <Text style={styles.text1}>Vacances</Text>
-              <Text style={styles.text2}>3</Text>
-            </View>
             <TouchableOpacity
               onPress={() => navigation.navigate("AjoutVac")}
               style={{ width: "48%", marginVertical: 14 }}
@@ -112,6 +103,7 @@ export default function Home({ navigation }) {
                   style={{
                     fontSize: 19,
                     borderRadius: 8,
+                    alignSelf: "center",
                   }}
                 />
                 Ajouter des vacances
@@ -123,6 +115,7 @@ export default function Home({ navigation }) {
               flexDirection: "row",
               flexWrap: "wrap",
               justifyContent: "space-around",
+              alignSelf: "center",
             }}
           >
             {vacs.map((data) => {
@@ -147,7 +140,9 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     marginVertical: 4,
     alignItems: "center",
-    justifyContent: "space-between",
+    justifyContent: "center",
+    borderTopWidth: 1,
+    borderBottomWidth: 1,
   },
 
   container2: {
@@ -164,6 +159,7 @@ const styles = StyleSheet.create({
     fontSize: 15,
     fontWeight: "600",
     marginBottom: 2,
+    alignSelf: "center",
   },
   text2: {
     fontSize: 12,
@@ -174,6 +170,7 @@ const styles = StyleSheet.create({
     maxWidth: "85%",
     maxHeight: 44,
     marginBottom: 10,
+    alignSelf: "center",
   },
   text3: {
     fontSize: 15,
