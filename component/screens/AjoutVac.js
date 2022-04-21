@@ -5,6 +5,7 @@ import {
   Button,
   TextInput,
   TouchableOpacity,
+  Text
 } from "react-native";
 import Entypo from "react-native-vector-icons/Entypo";
 import DateTimePicker from "@react-native-community/datetimepicker";
