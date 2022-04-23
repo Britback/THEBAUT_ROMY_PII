@@ -39,7 +39,7 @@ export default function Course({ route, navigation }) {
   const renderCourse = ({ item }) => {
     return (
       <TouchableOpacity onPress={() => suppCourse(item.id)}>
-        <Text>{item.course}</Text>
+        <Text> {item.course} </Text>
       </TouchableOpacity>
     );
   };
@@ -100,27 +100,47 @@ export default function Course({ route, navigation }) {
             </View>
           </View>
           <View style={styles.container}>
-            <View style={{ height: 110, width: 100, alignItems: "center" }}>
-              <FlatList data={courses} renderItem={renderCourse} />
-            </View>
-            <TextInput
-              value={course}
+            <View
               style={{
-                borderWidth: 2,
-                borderColor: "skyblue",
-                borderRadius: 5,
-                width: 200,
-                height: 50,
-                textAlign: "center",
+                height: 160,
+                marginTop: 90,
+                width: 2000,
+                marginBottom: 20,
+                alignItems: "center",
               }}
-              placeholder="Ex: Poisson"
-              onChangeText={(text) => setCourse(text)}
-            />
-            <TouchableOpacity style={styles.bouton} onPress={ajouterCourse}>
-              <Text style={styles.text}>Ajouter des courses</Text>
-            </TouchableOpacity>
+            >
+              <FlatList
+                data={courses}
+                renderItem={renderCourse}
+                style={{ backgroundColor: "lightblue", borderRadius: 20 }}
+              />
+            </View>
+            <View style={{ flexDirection: "row", marginBottom: 10 }}>
+              <TextInput
+                value={course}
+                style={{
+                  borderWidth: 2,
+                  borderColor: "skyblue",
+                  borderRadius: 5,
+                  width: 200,
+                  height: 50,
+                  textAlign: "center",
+                }}
+                placeholder="Ex: Poisson"
+                onChangeText={(text) => setCourse(text)}
+              />
+              <Entypo
+                onPress={ajouterCourse}
+                name="plus"
+                style={{
+                  fontSize: 30,
+                  borderRadius: 8,
+                  alignSelf: "center",
+                  color: "blue",
+                }}
+              />
+            </View>
             <Text style={styles.text2}>
-              {" "}
               Appuyez sur l'élément pour le supprimer
             </Text>
           </View>

@@ -49,7 +49,7 @@ export default StyleSheet.create({
     textTransform: "uppercase",
   },
   text2: {
-    fontSize: 12,
+    fontSize: 15,
     fontWeight: "400",
     letterSpacing: 1,
     opacity: 0.5,

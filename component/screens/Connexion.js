@@ -80,7 +80,7 @@ const Connexion = ({ navigation }) => {
           fgcolor="#363636"
         />
         <CustomButton
-          text="Vous n'avez pas de compte ? Créer en un"
+          text="Vous n'avez pas de compte ? Créez en un"
           onPress={() => navigation.navigate("CreerCompte")}
           type="TERTIARY"
         />

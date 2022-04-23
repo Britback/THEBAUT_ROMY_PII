@@ -10,7 +10,7 @@ export default function ReinitialiserMdp({ navigation }) {
   return (
     <ScrollView>
       <View style={styles.root}>
-        <Text style={styles.title}> Réinitialisez votre mot de passe </Text>
+        <Text style={styles.title}>Réinitialisez votre mot de passe </Text>
 
         <CustomInput
           placeholder="Nom d'utilisateur"

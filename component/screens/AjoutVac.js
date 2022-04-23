@@ -5,7 +5,8 @@ import {
   Button,
   TextInput,
   TouchableOpacity,
-  Text
+  Text,
+  Alert,
 } from "react-native";
 import Entypo from "react-native-vector-icons/Entypo";
 import DateTimePicker from "@react-native-community/datetimepicker";
@@ -31,7 +32,7 @@ class AjoutVac extends React.Component {
     const { navigate } = this.props.navigation;
     return (
       <View style={{ margin: 20 }}>
-        <TouchableOpacity onPress={() => navigate("Accueil")}>
+        <TouchableOpacity onPress={() => navigate("Home")}>
           <Entypo name="chevron-left" style={styles.chevron} />
         </TouchableOpacity>
         <TextInput

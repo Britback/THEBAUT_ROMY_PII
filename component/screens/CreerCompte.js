@@ -38,8 +38,7 @@ export default function CreerCompte({ navigation }) {
         <CustomButton text="Créer" onPress={() => signUp()} />
 
         <Text style={styles.text}>
-          {" "}
-          En créeant un compte vous confimez que vous acceptez notre{" "}
+          En créant un compte vous confimez que vous acceptez notre{" "}
           <Text
             style={styles.link}
             onPress={() => {
@@ -65,7 +64,7 @@ export default function CreerCompte({ navigation }) {
           type="TERTIARY"
         />
         <CustomButton
-          text="Sign in with Facebook"
+          text="Connectez-vous avec Facebook"
           onPress={() => {
             console.warn("Connectez vs avec Fb");
           }}
@@ -73,7 +72,7 @@ export default function CreerCompte({ navigation }) {
           fgcolor="#4765A9"
         />
         <CustomButton
-          text="Sign in with Google"
+          text="Connectez-vous avec Google"
           onPress={() => {
             console.warn("Connectez vs avec Google");
           }}
@@ -81,7 +80,7 @@ export default function CreerCompte({ navigation }) {
           fgcolor="#DD4D44"
         />
         <CustomButton
-          text="Sign in with Apple"
+          text="Connectez-vous avec Apple"
           onPress={() => {
             console.warn("Connectez vs avec Apple");
           }}
