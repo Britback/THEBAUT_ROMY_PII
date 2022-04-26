@@ -42,7 +42,7 @@ export default function Transport({ route, navigation, data }) {
   const renderCollab = ({ item }) => {
     return (
       <TouchableOpacity onPress={() => suppCollab(item.id)}>
-        <Text> et {item.collabName}</Text>
+        <Text> {item.collabName}</Text>
       </TouchableOpacity>
     );
   };
